@@ -1,0 +1,32 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+{% extends 'base.html'  %}
+{% block title %}Greeter Form V1{% endblock %}
+
+{% block content %}
+<h1>Currency Coverter</h1>
+{% with messages = get_flashed_messages() %}  
+         {% if messages %}  
+               {% for message in messages %}  
+                    <p>{{ message }}</p>  
+               {% endfor %}  
+         {% endif %}  
+      {% endwith %}  
+<form method = "POST" action="/result">
+  <div>
+    <label for="nameLabel">Converting From</label>
+    <input type="text"  name="Currency">
+  </div>
+  <div>
+    <label for="nameLabel">Converting To</label>
+    <input type="text"  name="Currency2">
+  </div>
+  <div>
+    <label for="nameLabel">Amount  </label>
+    <input type="text" name="Amount">
+  </div>
+  <button>Submit!</button>
+</form>
+
+{% endblock %}
